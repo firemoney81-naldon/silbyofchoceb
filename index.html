@@ -1,23 +1,627 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+        <!-- Schema.org Markup for Rich Snippets -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": "교통사고 실비보험 분석 및 상담",
+          "provider": {
+            "@type": "Organization",
+            "name": "실비보험 전문 분석 센터",
+            "url": "https://yourdomain.com"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "대한민국"
+          },
+          "description": "교통사고 발생 시 실비보험 적용 여부와 보상 범위에 대한 전문적인 분석 및 상담 서비스를 제공합니다. 2026년 변경되는 기준에 맞춰 최적의 솔루션을 제시합니다.",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "보험 상담 서비스",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "교통사고 보상 전문가 상담"
+                },
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "price": "0",
+                  "priceCurrency": "KRW",
+                  "description": "무료 초기 상담 서비스"
+                }
+              }
+            ]
+          },
+          "url": "https://yourdomain.com"
+        }
+        </script>
+        
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+            /* Reset and Base Styles */
+            body {
+                font-family: 'Noto Sans KR', sans-serif;
+                margin: 0;
+                padding: 0;
+                line-height: 1.7;
+                background-color: #f8f9fa;
+                color: #343a40;
+                scroll-behavior: smooth;
+            }
+            main {
+                max-width: 1000px;
+                margin: 2rem auto;
+                padding: 0 1.5rem;
+            }
+            section {
+                background-color: white;
+                padding: 3rem;
+                border-radius: 16px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+                margin-bottom: 3rem;
+            }
+
+            /* Header and Navigation */
+            header {
+                background-color: #0d47a1; /* Deep Blue */
+                color: white;
+                padding: 3rem 1.5rem;
+                text-align: center;
+                border-bottom: 8px solid #f9a825; /* Accent color: Gold */
+            }
+            h1 {
+                font-size: 2.8rem;
+                font-weight: 900;
+                margin: 0;
+                letter-spacing: -1px;
+            }
+            header p {
+                font-size: 1.2rem;
+                font-weight: 300;
+                margin-top: 0.8rem;
+            }
+            nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                margin-top: 2rem;
+                flex-wrap: wrap;
+            }
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-weight: 700;
+                padding: 0.8rem 1.5rem;
+                border-radius: 8px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                font-size: 1rem;
+            }
+            nav a:hover {
+                background-color: rgba(255, 255, 255, 0.15);
+                transform: translateY(-2px);
+            }
+
+            /* Content Typography and Structure */
+            h2 {
+                color: #0d47a1;
+                font-size: 2rem;
+                font-weight: 800;
+                margin-top: 0;
+                padding-bottom: 0.8rem;
+                border-bottom: 3px solid #f9a825;
+                margin-bottom: 1.5rem;
+            }
+            h3 {
+                color: #1a237e; /* Darker Blue */
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin-top: 2.5rem;
+                margin-bottom: 1rem;
+            }
+            p, ul, dl {
+                font-size: 1.05rem;
+                margin-bottom: 1.5rem;
+                color: #495057;
+            }
+            strong {
+                color: #1a237e;
+                font-weight: 700;
+            }
+
+            /* Lists and Checkmarks */
+            ul {
+                list-style: none;
+                padding-left: 0;
+            }
+            ul li {
+                position: relative;
+                padding-left: 25px;
+                margin-bottom: 10px;
+            }
+            ul li::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                color: #f9a825;
+                font-weight: 900;
+                font-size: 1.2rem;
+            }
+            .check-list li {
+                position: relative;
+                padding-left: 30px;
+                margin-bottom: 12px;
+                line-height: 1.6;
+            }
+            .check-list li::before {
+                content: '✔';
+                position: absolute;
+                left: 0;
+                top: 0;
+                color: #28a745; /* Green checkmark */
+                font-weight: 700;
+            }
+
+            /* Tables and Data Presentation */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 1.5rem;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            }
+            th, td {
+                padding: 1.2rem;
+                text-align: left;
+                font-size: 1rem;
+                border: 1px solid #e9ecef;
+            }
+            th {
+                background-color: #f1f3f5; /* Light grey header */
+                color: #343a40;
+                font-weight: 700;
+            }
+            tr:nth-child(even) {
+                background-color: #fdfdfd;
+            }
+            tr:hover {
+                background-color: #f0f4f8;
+            }
+            .highlight-cell {
+                background-color: #e3f2fd;
+                color: #0d47a1;
+                font-weight: 700;
+            }
+
+            /* Call to Action Buttons */
+            .cta-button {
+                display: block;
+                background-color: #f9a825; /* Accent color: Gold */
+                color: #0d47a1; /* Deep Blue text */
+                font-weight: 700;
+                padding: 1.5rem 3rem;
+                border-radius: 50px;
+                text-decoration: none;
+                margin: 3rem auto;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                text-align: center;
+                box-shadow: 0 6px 15px rgba(249, 168, 37, 0.3);
+                font-size: 1.2rem;
+                max-width: 300px;
+            }
+            .cta-button:hover {
+                background-color: #fbc02d;
+                transform: translateY(-3px);
+            }
+
+            /* Keyword Tags (for internal linking/SEO) */
+            .keyword-tags {
+                margin: 2rem 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .keyword-tags a {
+                background-color: #e3f2fd;
+                color: #0d47a1;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-size: 0.95rem;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                border: 1px solid #bbdefb;
+            }
+            .keyword-tags a:hover {
+                background-color: #bbdefb;
+            }
+
+            /* Accordion (FAQ section) */
+            dl dt {
+                background-color: #f1f3f5;
+                padding: 1.2rem;
+                border-radius: 8px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-weight: 700;
+                position: relative;
+                transition: background-color 0.3s;
+            }
+            dl dt:hover {
+                background-color: #e9ecef;
+            }
+            dl dt::after {
+                content: '▼';
+                position: absolute;
+                right: 20px;
+                font-size: 0.9rem;
+                transform: rotate(0deg);
+                transition: transform 0.3s;
+            }
+            dl dt.active::after {
+                transform: rotate(180deg);
+            }
+            dl dd {
+                background-color: #ffffff;
+                border: 1px solid #e9ecef;
+                border-top: none;
+                border-radius: 0 0 8px 8px;
+                padding: 1.5rem;
+                margin: -10px 0 20px 0;
+                display: none; /* Hidden by default */
+                transition: all 0.3s ease-in-out;
+            }
+            dl dt.active + dd {
+                display: block;
+            }
+
+            /* Consultation Form Styling */
+            form {
+                background-color: #f9f9f9;
+                padding: 2.5rem;
+                border-radius: 12px;
+                border: 1px solid #e0e0e0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            label {
+                font-weight: 600;
+                display: block;
+                margin-bottom: 0.5rem;
+                color: #343a40;
+            }
+            input[type="text"], input[type="tel"], input[type="email"], textarea, select {
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid #ced4da;
+                border-radius: 8px;
+                box-sizing: border-box;
+                font-size: 1rem;
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+            textarea {
+                resize: vertical;
+                min-height: 120px;
+                grid-column: span 2;
+            }
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+            .full-width {
+                grid-column: 1 / -1;
+            }
+            .form-submit-button {
+                background-color: #0d47a1;
+                color: white;
+                border: none;
+                padding: 1.2rem;
+                font-size: 1.1rem;
+                font-weight: 700;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .form-submit-button:hover {
+                background-color: #1a237e;
+            }
+
+            /* GraphPlaceholder Styling */
+            .graph-placeholder {
+                background-color: #f1f3f5;
+                height: 300px;
+                border-radius: 8px;
+                border: 1px dashed #ced4da;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #888;
+                font-size: 1.2rem;
+                margin: 2rem 0;
+            }
+
+            /* Footer */
+            footer {
+                text-align: center;
+                padding: 2.5rem;
+                font-size: 0.9rem;
+                color: #888;
+                background-color: #e9ecef;
+                border-top: 1px solid #dee2e6;
+                margin-top: 3rem;
+            }
+
+            /* Media Queries for Responsiveness */
+            @media (max-width: 768px) {
+                h1 { font-size: 2rem; }
+                h2 { font-size: 1.8rem; }
+                header { padding: 2rem 1rem; }
+                nav ul { flex-direction: column; gap: 1rem; }
+                nav a { padding: 0.6rem 1rem; }
+                main { padding: 0 1rem; }
+                section { padding: 2rem 1.5rem; }
+                form { grid-template-columns: 1fr; }
+                textarea { grid-column: auto; }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>교통사고 실비보험 완벽 분석: 2026년 보상 가이드</h1>
+            <p>자동차보험 한계를 넘어, 실비보험으로 후유증까지 꼼꼼하게 보장받는 방법</p>
+            <nav>
+                <ul>
+                    <li><a href="#coverage">보장 범위 분석</a></li>
+                    <li><a href="#comparison">보험 비교 및 청구</a></li>
+                    <li><a href="#policy-change">2026년 변경사항</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                    <li><a href="#consultation">무료 상담 신청</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="introduction">
+                <h2>교통사고 실비보험, 왜 필수인가요?</h2>
+                <p><strong>교통사고 실비보험</strong>은 자동차보험만으로 해결할 수 없는 의료비 부담을 덜어주는 핵심적인 역할을 합니다. 많은 분들이 교통사고 발생 시 자동차보험이 모든 치료비를 책임진다고 생각하지만, 실제로는 그렇지 않습니다. 특히 상대방 과실로 인해 사고가 발생했더라도, 자동차보험의 보상 범위는 한정적이며, 치료비 외에 발생하는 다양한 손해에 대해서는 충분한 보상이 이루어지지 않을 수 있습니다.</p>
+                <p><strong>실비보험</strong>, 즉 실손의료보험은 가입자가 실제로 지출한 의료비를 보장하는 보험입니다. 교통사고의 경우, 자동차보험에서 보상받지 못한 초과분에 대해 실비보험으로 보상받을 수 있습니다. 특히 <strong>경미한 사고로 인한 후유증</strong>이나 <strong>장기간의 재활 치료</strong>가 필요한 경우, 실비보험의 역할이 매우 중요해집니다. 본 페이지에서는 2026년 최신 기준으로 교통사고 관련 실비보험 보상 범위를 깊이 있게 분석하고, 현명하게 보험금을 청구하는 노하우를 제공합니다.</p>
+
+                <h3>자동차보험과 실비보험의 관계 이해하기</h3>
+                <p>교통사고 시 보험 처리는 크게 두 가지로 나뉩니다. 첫째는 <strong>자동차보험</strong>으로, 가해자의 과실에 따라 피해자의 치료비와 합의금이 지급됩니다. 둘째는 <strong>실비보험</strong>으로, 가입자가 지출한 의료비를 보상합니다. 이 둘의 관계는 '우선순위'와 '중복 보상'이라는 측면에서 이해해야 합니다. </p>
+                <p>기본적으로 교통사고 치료비는 자동차보험에서 우선 처리됩니다. 그러나 자동차보험의 보상 한도를 초과하거나 비급여 항목 중 일부에 대해 실비보험이 보충적인 역할을 합니다. 특히, 자동차보험으로 처리하지 않은 부분, 예를 들어 사고 후유증으로 인한 장기적인 물리치료나 입원 치료 등은 실비보험 청구 대상이 됩니다. 2026년 기준으로 실비보험 약관이 지속적으로 개정되고 있으므로, 최신 정보를 바탕으로 청구 계획을 세우는 것이 중요합니다.</p>
+
+                <div class="keyword-tags">
+                    <a href="#coverage">교통사고 실비보험 보상</a>
+                    <a href="#faq">교통사고 후유증 실비처리</a>
+                    <a href="#comparison">자동차보험 실비 중복</a>
+                    <a href="#policy-change">실비보험 교통사고 자기부담금</a>
+                    <a href="#consultation">교통사고 실비보험 전문가 상담</a>
+                </div>
+            </section>
+
+            <section id="coverage">
+                <h2>실비보험 보장 범위 심층 분석: 합의금 외의 보상</h2>
+                <p>교통사고가 발생하면 합의금 산정에만 집중하는 경향이 있습니다. 그러나 합의금은 위자료와 휴업손해액 등 손해배상금의 일부일 뿐, 실제 치료 과정에서 발생하는 모든 비용을 충당하지 못할 수 있습니다. 특히 <strong>실비보험은 비급여 항목</strong>을 보장함으로써 환자의 경제적 부담을 크게 줄여줍니다.</p>
+
+                <h3>1. 자동차보험 vs 실비보험 보상 항목 비교</h3>
+                <p>두 보험 간의 보상 항목을 명확히 이해해야 중복 없이 효과적으로 보험금을 청구할 수 있습니다. 아래 표는 일반적인 보상 항목을 비교한 것입니다.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>보상 항목</th>
+                            <th>자동차보험 보상 여부</th>
+                            <th>실비보험 보상 여부</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>급여 치료비 (본인부담금)</td>
+                            <td>✔ (전액 보상)</td>
+                            <td>X (자동차보험 우선 적용)</td>
+                        </tr>
+                        <tr>
+                            <td>비급여 치료비</td>
+                            <td>✔ (일부 항목만 인정)</td>
+                            <td>✔ (자기부담금 제외 후 보상)</td>
+                        </tr>
+                        <tr>
+                            <td>한방 치료비 (첩약, 추나)</td>
+                            <td>✔ (일부 인정, 한도 있음)</td>
+                            <td>✔ (특약 가입 시, 비급여 추나는 제한적)</td>
+                        </tr>
+                        <tr>
+                            <td>입원 일당</td>
+                            <td>X</td>
+                            <td>✔ (입원 일당 특약 가입 시)</td>
+                        </tr>
+                        <tr>
+                            <td>성형수술비 (사고 후유증)</td>
+                            <td>✔ (인정 범위 제한적)</td>
+                            <td>✔ (치료 목적 시 가능)</td>
+                        </tr>
+                        <tr>
+                            <td>간병비 (중증 환자)</td>
+                            <td>X</td>
+                            <td>✔ (특약 가입 시, 일정 조건 충족 필요)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2. 실비보험의 '자기부담금'과 '비급여' 처리의 중요성</h3>
+                <p>실비보험은 모든 의료비를 100% 보상해주지 않습니다. 가입 시점에 따라 자기부담금이 존재하며, 2026년 기준 4세대 실비보험은 자기부담금 비율이 높습니다. 교통사고의 경우에도 실비보험을 청구할 때 자기부담금이 적용됩니다. 하지만 자동차보험으로 처리하지 않은 비급여 항목, 예를 들어 도수치료나 체외충격파 치료 등은 실비보험 청구를 통해 부담을 줄일 수 있습니다.</p>
+                <p>특히 주의할 점은 실비보험 청구 시 <strong>'비급여 항목의 영수증'</strong>을 반드시 첨부해야 한다는 것입니다. 자동차보험사에서 인정하는 비급여 항목과 실비보험에서 인정하는 비급여 항목이 다를 수 있으므로, 의료기관에서 진료를 받을 때 영수증 처리에 유의해야 합니다.</p>
+
+                <div class="graph-placeholder">
+                    <p>그래프: 교통사고 후유증 치료 유형별(도수치료, 물리치료 등) 실비 청구 비중 변화 (2020-2025년)</p>
+                </div>
+
+                <h3>3. 경미한 사고, 장기 치료와 실비보험 활용법</h3>
+                <p>경미한 교통사고(예: 2주 진단)의 경우, 자동차보험 합의금으로 받은 금액이 실제 치료비나 후유증 치료에 부족할 수 있습니다. 특히 <strong>교통사고 후유증</strong>은 사고 발생 후 일정 시간이 지나서 나타나는 경우가 많아, 합의가 끝난 후에도 지속적인 치료가 필요합니다. 실비보험은 이러한 장기적인 치료에 대한 대비책이 됩니다.</p>
+                <p>실비보험 약관에 따라 <strong>사고일로부터 일정 기간 동안의 치료비</strong>를 보상받을 수 있습니다. 경미한 사고로 인해 자동차보험 합의금으로 일찍 합의를 마무리했더라도, 추후 발생하는 치료비를 실비보험으로 청구하여 경제적 손실을 최소화하는 것이 현명합니다. 이 때, 실비보험 가입 시점의 약관을 정확하게 확인하는 것이 중요합니다.</p>
+
+                <p><strong>주요 연관 검색어:</strong> 실비보험 교통사고 자기부담금, 교통사고 입원비 실비, 2주 진단 합의금, 교통사고 후유증 치료 실비</p>
+            </section>
+
+            <section id="policy-change">
+                <h2>2026년 실비보험 변경 사항과 교통사고 보상 전략</h2>
+                <p>2026년 실비보험 약관 변경은 교통사고 보상에도 큰 영향을 미칠 수 있습니다. 보험사들은 보험금 누수를 막기 위해 약관을 지속적으로 수정하고 있습니다. 최근 변경되는 주요 내용들을 미리 확인하여 합리적인 보상 계획을 세워야 합니다.</p>
+
+                <h3>1. 실비보험 비급여 항목 심사 강화 (2026년 전망)</h3>
+                <p>2026년부터 실비보험의 비급여 항목에 대한 심사가 더욱 강화될 것으로 예상됩니다. 특히 교통사고와 관련하여 과잉 진료 논란이 있는 도수치료, 체외충격파, 주사료 등에 대한 심사가 까다로워질 수 있습니다. 이는 실손보험의 지속 가능성을 높이기 위한 조치이지만, 소비자 입장에서는 필요 치료를 충분히 받기 어려워질 수 있다는 의미이기도 합니다. 따라서 교통사고 발생 시 진료기록을 명확히 하고, 의사 소견서를 첨부하여 청구해야 합니다.</p>
+                <p><strong><strong class="highlight-cell">핵심 대비책:</strong></strong> 비급여 치료의 필요성을 입증할 수 있는 객관적인 자료(MRI, X-ray 등)를 확보하고, 전문의의 명확한 진단 소견을 받아두는 것이 중요합니다. 단순히 통증 호소만으로는 보상 받기가 어려워질 수 있습니다.</p>
+
+                <h3>2. 4세대 실비보험의 교통사고 보상 구조 변화</h3>
+                <p>2021년 7월 이후 출시된 4세대 실비보험은 기존 세대와 달리 보험금 청구 이력에 따라 보험료가 할인/할증되는 구조를 가지고 있습니다. 교통사고로 실비보험을 청구할 경우, 다음 해 실비보험료가 할증될 수 있는지에 대한 질문이 많습니다. 실비보험 약관에는 '국민건강보험법에 따라 보장받지 못하는 비급여 항목에 한하여 보험금을 지급한다'고 명시되어 있습니다.</p>
+                <p>자동차보험에서 이미 치료비를 받은 경우 실비보험 청구 대상이 아니지만, 자동차보험에서 보상되지 않는 비급여 항목이나 한방 치료비 등을 실비보험으로 청구하면 보험료 할증 요인이 될 수 있습니다. 이는 장기적으로 보험료 부담을 증가시킬 수 있으므로, 경미한 사고의 경우 신중하게 청구 여부를 결정해야 합니다.</p>
+
+                <h3>3. 운전자보험과 실비보험의 시너지 효과</h3>
+                <p>교통사고 처리 시 운전자보험이 실비보험과 함께 중요한 역할을 합니다. 운전자보험은 12대 중과실 사고나 피해자 사망 시 발생하는 벌금, 합의금(교통사고처리지원금), 변호사 선임 비용 등을 보장합니다. 실비보험은 순수한 의료비를 보장하는 반면, 운전자보험은 사고 발생 시의 법적/경제적 책임을 보장합니다.</p>
+                <p>운전자보험의 '교통사고처리지원금'은 피해자에게 합의금 명목으로 지급되지만, 실비보험은 가입자 본인의 치료비 보상이라는 차이점이 있습니다. 따라서 교통사고 발생 시 두 보험을 적절히 활용하여 합의와 치료를 동시에 진행하는 것이 가장 효과적입니다.</p>
+            </section>
+
+            <section id="comparison">
+                <h2>실비보험 청구 노하우: 중복 청구 및 합의금 산정</h2>
+                <p>교통사고 발생 후 실비보험 청구 시 가장 많이 실수하는 부분은 중복 청구 가능 여부와 합의금 산정 과정에서 실비보험을 고려하지 않는 것입니다. 정확한 지식을 통해 손해를 최소화하는 방법을 알아봅니다.</p>
+
+                <h3>1. 실비보험 청구 시 '자기부담금' 계산법</h3>
+                <p>실비보험 청구 시 자기부담금은 가입한 상품의 세대에 따라 다르게 적용됩니다. 4세대 실비보험을 기준으로 보면, 급여 항목은 10~20%, 비급여 항목은 30%의 자기부담금이 적용됩니다. 하지만 교통사고로 인해 발생한 치료비의 경우, 자동차보험에서 100% 보상이 된다면 실비보험에서는 자기부담금을 제외한 금액이 보상됩니다.</p>
+                <p><strong><strong class="highlight-cell">예시:</strong></strong> 교통사고로 인해 500만원의 치료비가 발생했고, 자동차보험으로 400만원을 받았습니다. 나머지 100만원에 대해 실비보험을 청구할 때, 4세대 실비보험 기준으로 비급여 항목이라면 30만원(100만원의 30%)을 제외한 70만원을 보상받게 됩니다. 이처럼 자기부담금은 실비 청구에 중요한 변수이므로 청구 전 반드시 확인해야 합니다.</p>
+
+                <h3>2. 합의금 산정 시 실비보험 고려하기</h3>
+                <p>교통사고 합의금은 치료비 외에도 위자료, 휴업손해액, 상실수익액 등으로 구성됩니다. 실비보험을 통해 의료비 부담을 줄였다면, 합의금 산정 시 유리한 위치를 점할 수 있습니다. 예를 들어, 자동차보험에서 '미수선 수리비' 명목으로 돈을 받고, 실제 치료는 실비보험으로 받는 경우가 있습니다. 그러나 이는 보험사 간의 복잡한 정산 과정을 거치므로 전문가의 도움을 받는 것이 좋습니다.</p>
+                <p>특히 <strong>합의 시점</strong>에 따라 실비보험 활용 전략이 달라집니다. 합의 후에는 더 이상 자동차보험을 통한 보상이 불가능하므로, 합의 전까지 충분한 치료를 받은 후 실비보험으로 후속 치료를 계획하는 것이 일반적입니다. 합의서 작성 시 '향후 치료비' 항목을 명시하여 실비 청구에 문제가 없도록 하는 것도 중요합니다.</p>
+
+                <h3>3. 실비보험 청구 절차 및 필요 서류</h3>
+                <p>실비보험 청구는 자동차보험 청구와 별개로 진행됩니다. 다음은 일반적인 청구 절차입니다.</p>
+                <ul class="check-list">
+                    <li><strong>보험금 청구서 작성:</strong> 가입한 실비보험사에 청구서를 제출합니다.</li>
+                    <li><strong>진료 기록지 및 영수증:</strong> 의료기관에서 발급받은 진단서, 입퇴원 확인서, 세부 진료비 내역서, 약제비 영수증 등을 첨부합니다.</li>
+                    <li><strong>교통사고 관련 서류:</strong> 교통사고 사실 확인원, 자동차보험 지급결의서, 경찰서 사고 보고서 등을 첨부하여 사고 경위를 명확히 합니다.</li>
+                    <li><strong>보험사 심사:</strong> 보험사에서 제출된 서류를 검토하고, 자동차보험 보상 내역을 확인하여 중복 보상 여부를 판단합니다.</li>
+                    <li><strong>보험금 지급:</strong> 자기부담금 등을 제외한 금액이 지급됩니다.</li>
+                </ul>
+                <p><strong><strong class="highlight-cell">주의사항:</strong></strong> 실비보험 약관에 따라 교통사고로 인한 치료는 '교통사고 발생일'로부터 2~3년 이내에 청구해야 합니다. 청구 기한이 지나면 보상받을 수 없으므로, 사고 직후부터 꼼꼼하게 서류를 관리해야 합니다.</p>
+            </section>
+
+            <section id="faq">
+                <h2>자주 묻는 질문 (FAQ)</h2>
+                <p>네이버 지식iN 등에서 <strong>'교통사고 실비보험'</strong>을 검색한 사용자들이 궁금해하는 질문들을 모았습니다. 실비보험 청구 시 궁금증을 해결해 보세요.</p>
+                <dl>
+                    <dt tabindex="0" aria-expanded="false" class="accordion-trigger">질문 1: 경미한 사고로 입원했는데 실비보험으로 입원비를 받을 수 있나요?</dt>
+                    <dd>답변: 교통사고 입원비는 기본적으로 자동차보험에서 지급됩니다. 실비보험은 입원일당 특약이 있다면 지급될 수 있습니다. 그러나 4세대 실비보험은 비급여 항목에 대한 자기부담금이 높고, 입원 일당 특약이 없는 경우가 많아 청구 전에 약관을 확인해야 합니다. 경미한 사고로 입원 시, 과잉 진료 논란으로 인해 보험사 심사가 까다로울 수 있습니다.</dd>
+
+                    <dt tabindex="0" aria-expanded="false" class="accordion-trigger">질문 2: 교통사고 합의금을 받고도 실비보험으로 치료비를 청구할 수 있나요?</dt>
+                    <dd>답변: 합의금을 받았다고 해서 실비보험 청구가 완전히 불가능한 것은 아닙니다. 합의금은 위자료와 휴업손해액 등 손해배상금의 성격이 강하며, 합의서에 명시된 향후 치료비 보상 여부에 따라 실비 청구 가능성이 달라집니다. 특히, 합의 시점 이후에 발생한 후유증 치료비에 대해서는 실비보험 청구가 가능할 수 있습니다. 다만, 보험사마다 해석의 여지가 다르므로 전문가와 상의하는 것이 좋습니다.</dd>
+
+                    <dt tabindex="0" aria-expanded="false" class="accordion-trigger">질문 3: 실비보험 청구 시 보험료가 할증되나요?</dt>
+                    <dd>답변: 4세대 실비보험은 청구 이력에 따라 보험료가 할증될 수 있습니다. 특히 비급여 항목에 대한 청구 횟수와 금액이 할증의 주요 기준이 됩니다. 경미한 사고로 인해 실비보험을 청구할 경우, 다음 해 보험료가 할증될 수 있으므로 청구 전에 신중하게 고려해야 합니다. 그러나 중대한 사고나 장기적인 치료가 필요한 경우에는 보험금 청구가 당연히 우선되어야 합니다.</dd>
+
+                    <dt tabindex="0" aria-expanded="false" class="accordion-trigger">질문 4: 한방 치료도 실비보험으로 보상받을 수 있나요?</dt>
+                    <dd>답변: 한방 치료 중 급여 항목(예: 침, 뜸)은 국민건강보험이 적용되므로 실비보험으로 청구 가능합니다. 그러나 비급여 항목(예: 첩약, 비급여 추나)에 대해서는 실비보험 약관에 따라 보상 여부가 결정됩니다. 4세대 실비보험에서는 비급여 추나 치료에 대한 보상이 제한적일 수 있습니다. 또한, 한방 병원에서의 입원 치료에 대해서는 보험사마다 보상 기준이 다를 수 있으므로 약관을 정확하게 확인해야 합니다.</dd>
+                </dl>
+            </section>
+
+            <section class="external-links">
+                <h2>신뢰할 수 있는 외부 정보 및 참고 자료</h2>
+                <p>교통사고 및 실비보험 관련 법규와 정책을 제공하는 공신력 있는 기관의 정보를 참고하여 정확한 판단을 내리세요.</p>
+                <ul>
+                    <li><a href="https://www.fss.or.kr/" target="_blank">금융감독원 (FSS) - 보험 관련 민원 및 약관 안내</a></li>
+                    <li><a href="https://www.fsc.go.kr/index.jsp" target="_blank">금융위원회 (FSC) - 실손의료보험 제도 개선 정책</a></li>
+                    <li><a href="https://www.molit.go.kr/" target="_blank">국토교통부 (MOLIT) - 자동차보험 표준약관 및 제도 안내</a></li>
+                    <li><a href="https://www.koic.or.kr/main.do" target="_blank">보험개발원 (KIDI) - 보험 통계 및 정보 제공</a></li>
+                    <li><a href="https://namu.wiki/w/%EC%8B%A4%EC%86%90%EC%9D%98%EB%A3%8C%EB%B3%B4%ED%97%98" target="_blank">실손의료보험 관련 나무위키 정보</a></li>
+                </ul>
+            </section>
+
+            <section id="consultation">
+                <h2>무료 교통사고 실비보험 전문가 상담 신청</h2>
+                <p>복잡한 교통사고 실비보험 청구, 혼자 고민하지 마세요. 전문가가 1:1 맞춤 상담을 통해 정확한 보상 범위를 분석하고 최적의 청구 전략을 제시해 드립니다. 2026년 최신 기준으로 불필요한 손해를 최소화하세요.</p>
+
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">성함</label>
+                        <input type="text" id="name" name="name" placeholder="성함을 입력해주세요." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">연락처</label>
+                        <input type="tel" id="contact" name="contact" placeholder="ex) 010-1234-5678" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="accidentDate">사고 발생일</label>
+                        <input type="text" id="accidentDate" name="accidentDate" placeholder="ex) 2025년 11월 1일">
+                    </div>
+                    <div class="form-group">
+                        <label for="accidentDetails">사고 내용 요약 (2주 진단 등)</label>
+                        <input type="text" id="accidentDetails" name="accidentDetails" placeholder="ex) 경미한 접촉사고, 2주 진단">
+                    </div>
+                    <div class="form-group">
+                        <label for="currentTreatment">현재 치료 상황</label>
+                        <select id="currentTreatment" name="currentTreatment">
+                            <option value="initial">사고 직후 치료 예정</option>
+                            <option value="ongoing">치료 중 (입원/통원)</option>
+                            <option value="aftermath">치료 후 후유증 관리</option>
+                            <option value="settled">합의 완료 후 문의</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="insuranceType">보유 보험 종류</label>
+                        <select id="insuranceType" name="insuranceType">
+                            <option value="personal">실비보험만 보유</option>
+                            <option value="driver">운전자보험만 보유</option>
+                            <option value="both">실비보험+운전자보험 모두 보유</option>
+                            <option value="none">보험 없음</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="consultationDetails">상담 요청 세부 내용</label>
+                        <textarea id="consultationDetails" name="consultationDetails" placeholder="궁금한 내용을 자세히 적어주시면 정확한 상담이 가능합니다."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="form-submit-button">전문가 무료 상담 신청</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 교툥사고 실비보험 전문 분석 센터. All rights reserved.</p>
+        </footer>
+
+        <script>
+            // FAQ 아코디언 기능 (접기/펼치기)
+            document.querySelectorAll('dl dt').forEach((dt) => {
+                dt.addEventListener('click', () => {
+                    // 모든 dd 닫기
+                    document.querySelectorAll('dl dd').forEach(dd => dd.style.display = 'none');
+                    document.querySelectorAll('dl dt').forEach(d => d.classList.remove('active'));
+
+                    // 클릭한 dt의 dd 토글
+                    const nextDd = dt.nextElementSibling;
+                    if (nextDd && nextDd.tagName === 'DD') {
+                        if (nextDd.style.display === 'block') {
+                            nextDd.style.display = 'none';
+                            dt.classList.remove('active');
+                            dt.setAttribute('aria-expanded', 'false');
+                        } else {
+                            nextDd.style.display = 'block';
+                            dt.classList.add('active');
+                            dt.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+                dt.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        dt.click();
+                    }
+                });
+            });
+        </script>
+
+
+      
